@@ -41,6 +41,13 @@ class _HeliosAppState extends State<HeliosApp> {
     talker: sl<Talker>(),
     options: TalkerWrapperOptions(
       exceptionTitle: L18n.errorTitle.getString(context),
+      exceptionAlertBuilder: (context, data) => Container(
+        height: 0,
+        decoration: BoxDecoration(
+          color: Color(0xFFEAEAEA),
+          boxShadow: [BoxShadow()],
+        ),
+      ),
     ),
     child: MaterialApp.router(
       supportedLocales: sl<FlutterLocalization>().supportedLocales,

@@ -18,6 +18,7 @@ dependencies:
   talker_bloc_logger: ^5.1.17
   talker_dio_logger: ^5.1.17
   talker_flutter: ^5.1.17
+  flag: ^7.0.2
 
 dev_dependencies:
   flutter_test:
@@ -30,3 +31,16 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/i18n/
+    - assets/images/
+
+  fonts:
+    - family: Roboto_Condensed
+      fonts:
+        - asset: assets/fonts/RobotoCondensed-Italic-VariableFont_wght.ttf
+          style: italic
+        - asset: assets/fonts/RobotoCondensed-VariableFont_wght.ttf
+
+        
+          
