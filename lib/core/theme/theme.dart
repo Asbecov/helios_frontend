@@ -19,5 +19,24 @@ final ThemeData theme = ThemeData(
     tertiary: Color(0xFF6E688F),
     onTertiary: Colors.white,
   ),
-  textTheme: TextTheme(),
+  textTheme: TextTheme(
+    titleLarge: TextStyle(
+      fontSize: 20,
+      fontFamily: kFontFamily,
+      fontWeight: FontWeight.w600,
+      color: Colors.black,
+    ),
+    titleSmall: TextStyle(
+      fontSize: 16,
+      fontFamily: kFontFamily,
+      fontWeight: FontWeight.w600,
+      color: Colors.black,
+    ),
+    labelMedium: TextStyle(
+      fontSize: 16,
+      fontFamily: kFontFamily,
+      fontWeight: FontWeight.w600,
+      color: Colors.black.withValues(alpha: 0.5),
+    ),
+  ),
 );

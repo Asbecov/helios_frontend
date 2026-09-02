@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_localization/flutter_localization.dart';
+import 'package:helios_frontend/core/widgets/error_snack.dart';
 import 'package:talker_flutter/talker_flutter.dart';
 
 import 'package:helios_frontend/core/constants/l18n.dart';
 import 'package:helios_frontend/core/di/dependencies.dart';
 
 class HeliosApp extends StatefulWidget {
-  const HeliosApp({super.key});
+  const HeliosApp({super.key}); 
 
   @override
   State<HeliosApp> createState() => _HeliosAppState();
@@ -41,13 +42,7 @@ class _HeliosAppState extends State<HeliosApp> {
     talker: sl<Talker>(),
     options: TalkerWrapperOptions(
       exceptionTitle: L18n.errorTitle.getString(context),
-      exceptionAlertBuilder: (context, data) => Container(
-        height: 0,
-        decoration: BoxDecoration(
-          color: Color(0xFFEAEAEA),
-          boxShadow: [BoxShadow()],
-        ),
-      ),
+      exceptionAlertBuilder: (context, error) => ErrorSnack(error: error),
     ),
     child: MaterialApp.router(
       supportedLocales: sl<FlutterLocalization>().supportedLocales,
