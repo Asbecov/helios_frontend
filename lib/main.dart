@@ -18,7 +18,9 @@ void main() async {
     } catch (e, st) {
       sl<Talker>().handle(e, st);
     }
-  }
 
-  runApp(HeliosApp());
+    runApp(const HeliosApp());
+  } else {
+    runApp(const HeliosApp.unsupported());
+  }
 }

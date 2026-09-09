@@ -7,8 +7,12 @@ import 'package:talker_flutter/talker_flutter.dart';
 import 'package:helios_frontend/core/constants/l18n.dart';
 import 'package:helios_frontend/core/di/dependencies.dart';
 
+import 'package:helios_frontend/app/unsupported_helios_app.dart';
+
 class HeliosApp extends StatefulWidget {
-  const HeliosApp({super.key}); 
+  const HeliosApp({super.key});
+
+  const factory HeliosApp.unsupported({Key? key}) = UnsupportedHeliosApp;
 
   @override
   State<HeliosApp> createState() => _HeliosAppState();

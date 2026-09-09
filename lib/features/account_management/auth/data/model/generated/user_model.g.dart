@@ -8,17 +8,17 @@ part of '../user_model.dart';
 
 _UserModel _$UserModelFromJson(Map<String, dynamic> json) => _UserModel(
   id: json['id'] as String,
-  telegramId: (json['telegramId'] as num).toInt(),
+  telegramId: (json['telegram_id'] as num).toInt(),
   username: json['username'] as String?,
-  marzbanUsername: json['marzbanUsername'] as String?,
-  createdAt: DateTime.parse(json['createdAt'] as String),
+  marzbanUsername: json['marzban_username'] as String?,
+  createdAt: DateTime.parse(json['created_at'] as String),
 );
 
 Map<String, dynamic> _$UserModelToJson(_UserModel instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'telegramId': instance.telegramId,
+      'telegram_id': instance.telegramId,
       'username': instance.username,
-      'marzbanUsername': instance.marzbanUsername,
-      'createdAt': instance.createdAt.toIso8601String(),
+      'marzban_username': instance.marzbanUsername,
+      'created_at': instance.createdAt.toIso8601String(),
     };

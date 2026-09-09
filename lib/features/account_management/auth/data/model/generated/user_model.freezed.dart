@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$UserModel {
 
- String get id; int get telegramId; String? get username; String? get marzbanUsername; DateTime get createdAt;
+ String get id;@JsonKey(name: "telegram_id") int get telegramId; String? get username;@JsonKey(name: "marzban_username") String? get marzbanUsername;@JsonKey(name: "created_at") DateTime get createdAt;
 /// Create a copy of UserModel
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $UserModelCopyWith<$Res>  {
   factory $UserModelCopyWith(UserModel value, $Res Function(UserModel) _then) = _$UserModelCopyWithImpl;
 @useResult
 $Res call({
- String id, int telegramId, String? username, String? marzbanUsername, DateTime createdAt
+ String id,@JsonKey(name: "telegram_id") int telegramId, String? username,@JsonKey(name: "marzban_username") String? marzbanUsername,@JsonKey(name: "created_at") DateTime createdAt
 });
 
 
@@ -157,7 +157,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  int telegramId,  String? username,  String? marzbanUsername,  DateTime createdAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @JsonKey(name: "telegram_id")  int telegramId,  String? username, @JsonKey(name: "marzban_username")  String? marzbanUsername, @JsonKey(name: "created_at")  DateTime createdAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _UserModel() when $default != null:
 return $default(_that.id,_that.telegramId,_that.username,_that.marzbanUsername,_that.createdAt);case _:
@@ -178,7 +178,7 @@ return $default(_that.id,_that.telegramId,_that.username,_that.marzbanUsername,_
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  int telegramId,  String? username,  String? marzbanUsername,  DateTime createdAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @JsonKey(name: "telegram_id")  int telegramId,  String? username, @JsonKey(name: "marzban_username")  String? marzbanUsername, @JsonKey(name: "created_at")  DateTime createdAt)  $default,) {final _that = this;
 switch (_that) {
 case _UserModel():
 return $default(_that.id,_that.telegramId,_that.username,_that.marzbanUsername,_that.createdAt);case _:
@@ -198,7 +198,7 @@ return $default(_that.id,_that.telegramId,_that.username,_that.marzbanUsername,_
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  int telegramId,  String? username,  String? marzbanUsername,  DateTime createdAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @JsonKey(name: "telegram_id")  int telegramId,  String? username, @JsonKey(name: "marzban_username")  String? marzbanUsername, @JsonKey(name: "created_at")  DateTime createdAt)?  $default,) {final _that = this;
 switch (_that) {
 case _UserModel() when $default != null:
 return $default(_that.id,_that.telegramId,_that.username,_that.marzbanUsername,_that.createdAt);case _:
@@ -213,14 +213,14 @@ return $default(_that.id,_that.telegramId,_that.username,_that.marzbanUsername,_
 @JsonSerializable()
 
 class _UserModel extends UserModel {
-  const _UserModel({required this.id, required this.telegramId, this.username, this.marzbanUsername, required this.createdAt}): super._();
+  const _UserModel({required this.id, @JsonKey(name: "telegram_id") required this.telegramId, this.username, @JsonKey(name: "marzban_username") this.marzbanUsername, @JsonKey(name: "created_at") required this.createdAt}): super._();
   factory _UserModel.fromJson(Map<String, dynamic> json) => _$UserModelFromJson(json);
 
 @override final  String id;
-@override final  int telegramId;
+@override@JsonKey(name: "telegram_id") final  int telegramId;
 @override final  String? username;
-@override final  String? marzbanUsername;
-@override final  DateTime createdAt;
+@override@JsonKey(name: "marzban_username") final  String? marzbanUsername;
+@override@JsonKey(name: "created_at") final  DateTime createdAt;
 
 /// Create a copy of UserModel
 /// with the given fields replaced by the non-null parameter values.
@@ -255,7 +255,7 @@ abstract mixin class _$UserModelCopyWith<$Res> implements $UserModelCopyWith<$Re
   factory _$UserModelCopyWith(_UserModel value, $Res Function(_UserModel) _then) = __$UserModelCopyWithImpl;
 @override @useResult
 $Res call({
- String id, int telegramId, String? username, String? marzbanUsername, DateTime createdAt
+ String id,@JsonKey(name: "telegram_id") int telegramId, String? username,@JsonKey(name: "marzban_username") String? marzbanUsername,@JsonKey(name: "created_at") DateTime createdAt
 });
 
 

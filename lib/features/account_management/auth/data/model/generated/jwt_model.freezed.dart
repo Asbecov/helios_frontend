@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$JwtModel {
 
- String get accessToken; String get refreshToken;
+@JsonKey(name: "access_token") String get accessToken;@JsonKey(name: "token_type") String get tokenType;
 /// Create a copy of JwtModel
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +28,16 @@ $JwtModelCopyWith<JwtModel> get copyWith => _$JwtModelCopyWithImpl<JwtModel>(thi
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is JwtModel&&(identical(other.accessToken, accessToken) || other.accessToken == accessToken)&&(identical(other.refreshToken, refreshToken) || other.refreshToken == refreshToken));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is JwtModel&&(identical(other.accessToken, accessToken) || other.accessToken == accessToken)&&(identical(other.tokenType, tokenType) || other.tokenType == tokenType));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,accessToken,refreshToken);
+int get hashCode => Object.hash(runtimeType,accessToken,tokenType);
 
 @override
 String toString() {
-  return 'JwtModel(accessToken: $accessToken, refreshToken: $refreshToken)';
+  return 'JwtModel(accessToken: $accessToken, tokenType: $tokenType)';
 }
 
 
@@ -48,7 +48,7 @@ abstract mixin class $JwtModelCopyWith<$Res>  {
   factory $JwtModelCopyWith(JwtModel value, $Res Function(JwtModel) _then) = _$JwtModelCopyWithImpl;
 @useResult
 $Res call({
- String accessToken, String refreshToken
+@JsonKey(name: "access_token") String accessToken,@JsonKey(name: "token_type") String tokenType
 });
 
 
@@ -65,10 +65,10 @@ class _$JwtModelCopyWithImpl<$Res>
 
 /// Create a copy of JwtModel
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? accessToken = null,Object? refreshToken = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? accessToken = null,Object? tokenType = null,}) {
   return _then(_self.copyWith(
 accessToken: null == accessToken ? _self.accessToken : accessToken // ignore: cast_nullable_to_non_nullable
-as String,refreshToken: null == refreshToken ? _self.refreshToken : refreshToken // ignore: cast_nullable_to_non_nullable
+as String,tokenType: null == tokenType ? _self.tokenType : tokenType // ignore: cast_nullable_to_non_nullable
 as String,
   ));
 }
@@ -154,10 +154,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String accessToken,  String refreshToken)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: "access_token")  String accessToken, @JsonKey(name: "token_type")  String tokenType)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _JwtModel() when $default != null:
-return $default(_that.accessToken,_that.refreshToken);case _:
+return $default(_that.accessToken,_that.tokenType);case _:
   return orElse();
 
 }
@@ -175,10 +175,10 @@ return $default(_that.accessToken,_that.refreshToken);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String accessToken,  String refreshToken)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: "access_token")  String accessToken, @JsonKey(name: "token_type")  String tokenType)  $default,) {final _that = this;
 switch (_that) {
 case _JwtModel():
-return $default(_that.accessToken,_that.refreshToken);case _:
+return $default(_that.accessToken,_that.tokenType);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -195,10 +195,10 @@ return $default(_that.accessToken,_that.refreshToken);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String accessToken,  String refreshToken)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: "access_token")  String accessToken, @JsonKey(name: "token_type")  String tokenType)?  $default,) {final _that = this;
 switch (_that) {
 case _JwtModel() when $default != null:
-return $default(_that.accessToken,_that.refreshToken);case _:
+return $default(_that.accessToken,_that.tokenType);case _:
   return null;
 
 }
@@ -210,11 +210,11 @@ return $default(_that.accessToken,_that.refreshToken);case _:
 @JsonSerializable()
 
 class _JwtModel extends JwtModel {
-  const _JwtModel({required this.accessToken, required this.refreshToken}): super._();
+  const _JwtModel({@JsonKey(name: "access_token") required this.accessToken, @JsonKey(name: "token_type") required this.tokenType}): super._();
   factory _JwtModel.fromJson(Map<String, dynamic> json) => _$JwtModelFromJson(json);
 
-@override final  String accessToken;
-@override final  String refreshToken;
+@override@JsonKey(name: "access_token") final  String accessToken;
+@override@JsonKey(name: "token_type") final  String tokenType;
 
 /// Create a copy of JwtModel
 /// with the given fields replaced by the non-null parameter values.
@@ -229,16 +229,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _JwtModel&&(identical(other.accessToken, accessToken) || other.accessToken == accessToken)&&(identical(other.refreshToken, refreshToken) || other.refreshToken == refreshToken));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _JwtModel&&(identical(other.accessToken, accessToken) || other.accessToken == accessToken)&&(identical(other.tokenType, tokenType) || other.tokenType == tokenType));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,accessToken,refreshToken);
+int get hashCode => Object.hash(runtimeType,accessToken,tokenType);
 
 @override
 String toString() {
-  return 'JwtModel(accessToken: $accessToken, refreshToken: $refreshToken)';
+  return 'JwtModel(accessToken: $accessToken, tokenType: $tokenType)';
 }
 
 
@@ -249,7 +249,7 @@ abstract mixin class _$JwtModelCopyWith<$Res> implements $JwtModelCopyWith<$Res>
   factory _$JwtModelCopyWith(_JwtModel value, $Res Function(_JwtModel) _then) = __$JwtModelCopyWithImpl;
 @override @useResult
 $Res call({
- String accessToken, String refreshToken
+@JsonKey(name: "access_token") String accessToken,@JsonKey(name: "token_type") String tokenType
 });
 
 
@@ -266,10 +266,10 @@ class __$JwtModelCopyWithImpl<$Res>
 
 /// Create a copy of JwtModel
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? accessToken = null,Object? refreshToken = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? accessToken = null,Object? tokenType = null,}) {
   return _then(_JwtModel(
 accessToken: null == accessToken ? _self.accessToken : accessToken // ignore: cast_nullable_to_non_nullable
-as String,refreshToken: null == refreshToken ? _self.refreshToken : refreshToken // ignore: cast_nullable_to_non_nullable
+as String,tokenType: null == tokenType ? _self.tokenType : tokenType // ignore: cast_nullable_to_non_nullable
 as String,
   ));
 }

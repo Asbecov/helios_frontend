@@ -9,10 +9,10 @@ part 'generated/user_model.g.dart';
 abstract class UserModel extends BaseModel with _$UserModel {
   const factory UserModel({
     required String id,
-    required int telegramId,
+    @JsonKey(name: "telegram_id") required int telegramId,
     String? username,
-    String? marzbanUsername,
-    required DateTime createdAt,
+    @JsonKey(name: "marzban_username") String? marzbanUsername,
+    @JsonKey(name: "created_at") required DateTime createdAt,
   }) = _UserModel;
 
   const UserModel._();
